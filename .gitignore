@@ -11,4 +11,4 @@ ipython_config.py
 
 # StatCan WDS
 statcan_wds/buid
-statcan_wds/statcan_wds.egg-info
+statcan_wds.egg-info
