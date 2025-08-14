@@ -1,7 +1,0 @@
-README.md
-pyproject.toml
-statcan_wds.egg-info/PKG-INFO
-statcan_wds.egg-info/SOURCES.txt
-statcan_wds.egg-info/dependency_links.txt
-statcan_wds.egg-info/requires.txt
-statcan_wds.egg-info/top_level.txt

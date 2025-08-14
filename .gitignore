@@ -8,3 +8,7 @@ ipython_config.py
 
 # IDE
 .idea/
+
+# StatCan WDS
+statcan_wds/buid
+statcan_wds/statcan_wds.egg-info

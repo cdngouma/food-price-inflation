@@ -230,11 +230,11 @@ def getVectorIds(pid, coords):
     ).json()
 
     # Build {vectorId: title}; relies on WDS response structure
-    vec_map = {s["object"]["vectorId"]: s["object"]["SeriesTitleEn"] for s in series}
+    vec_map = { s["object"]["vectorId"]: s["object"]["SeriesTitleEn"] for s in series if s["object"]["vectorId"] != 0 }
 
     # All-invalid case: a single item with vectorId 0 (common WDS pattern)
-    if len(vec_map) == 1 and list(vec_map.keys())[0] == 0:
-        vec_map = None
+    if not vec_map:
+        raise Exception(f"Failed to retrieve vectors for coordinates: {coords}. Please specify all required dimensions")
 
     return vec_map
 
@@ -283,11 +283,6 @@ def getTableData(pid, series_specs, startRefPeriod="2000-01-01", endRefPeriod="2
 
     # 3) Resolve coordinates to vector IDs (+ readable titles)
     vec_map = getVectorIds(pid, coords)
-    if not vec_map:
-        raise Exception(
-            f"Failed to retrieve vectors for coordinates: {coords}. "
-            "Please specify all required dimensions"
-        )
 
     # 4) Fetch all vectors across the requested reference-period range
     # Build a CSV of quoted vectorIds per current API style
