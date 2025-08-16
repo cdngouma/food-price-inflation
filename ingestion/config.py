@@ -1,5 +1,6 @@
 from statcan_wds import previewDimensions
 from dotenv import load_dotenv
+import os
 
 # Load environment variables from .env file
 load_dotenv()
@@ -17,8 +18,8 @@ DATABASE_URL = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST
 
 # Foreign exchange codes
 FX_CODES = {
-    "legacy": {"IEXM0102_AVG": "USD/CAD", "EUROCAM01": "EUR/CAD"},
-    "current": {"FXMUSDCAD": "USD/CAD", "FXMEURCAD": "EUR/CAD"}
+    "legacy": {"IEXM0102_AVG": "USD Rate", "EUROCAM01": "EUR Rate"},
+    "current": {"FXMUSDCAD": "USD Rate", "FXMEURCAD": "EUR Rate"}
 }
 
 # Labour Force Status

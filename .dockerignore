@@ -1,0 +1,15 @@
+__pycache__/
+.vs/
+.idea/
+.ipynb_checkpoints/
+.git/
+*.pyc
+
+# Terraform
+*.tf
+*.tfstate
+*.tfstate.backup
+*.tfvars
+.terraform/
+*.plan
+.terraform.lock.hcl
